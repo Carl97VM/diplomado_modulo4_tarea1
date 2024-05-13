@@ -8,12 +8,14 @@ async function obtenerPosts() {
   )
 
   const valores = respuesta.data
-
+  console.log("Respuesta del endpoint", valores);
+  
   const sortedProducts = valores.sort((a, b) => b.price - a.price);
+  console.log("valores ordenados", sortedProducts);
 
   const filteredProducts = sortedProducts.filter(product => product.rating.rate > 2.9);
-
-  console.log(filteredProducts);
+  console.log("Filtrado de los datos", filteredProducts);
+  
 }
 
 obtenerPosts()
